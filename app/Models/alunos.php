@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class alunos extends Model
 {
@@ -21,8 +22,8 @@ class alunos extends Model
         return $this->belongsToMany(Cursos::class, 'auxAluno', 'idAluno', 'idCurso');
     }
 
-    public function avaliacoes()
+    public function avaliacoes(): MorphMany
     {
-        return $this->hasMany(Avaliacoes::class, 'idAluno');
+        return $this->MorphMany(Avaliacoes::class, 'avaliable');
     }
 }

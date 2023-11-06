@@ -21,10 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/alunos/novo', [AlunosController::class, 'store'])->name('registroAluno');
-Route::post('/alunos/inscrever',  [AlunosController::class, 'inscreverCurso']);
-Route::get('/alunos/{id}',  [AlunosController::class, 'show']);
-Route::get('/alunos',  [AlunosController::class, 'index']);
+Route::post('/alunos/novo/', [AlunosController::class, 'store'])->name('registroAluno');
+Route::post('/alunos/inscrever', [AlunosController::class, 'inscreverCurso']);
+Route::get('/alunos/{id}', [AlunosController::class, 'show']);
+Route::get('/alunos', [AlunosController::class, 'index']);
 
 Route::post('/cursos/novo', [CursosController::class, 'store'])->name('registroCurso');
-Route::post('/avaliacoes/novo', [AvaliacoesController::class, 'store'])->name('registroAvaliacao');
+Route::post('/avaliacoes/novo/{id}', [AvaliacoesController::class, 'store'])->name('registroAvaliacao');

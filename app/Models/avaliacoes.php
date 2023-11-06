@@ -10,18 +10,15 @@ class avaliacoes extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idAluno',
-        'idCurso',
         'disciplina',
-        'nota'
+        'nota',
+        'avaliable_id',
+        'avaliable_type'
+
     ];
 
-    public function alunos()
+    public function avaliable()
     {
-        return $this->belongsTo(Alunos::class);
-    }
-    public function cursos()
-    {
-        return $this->belongsTo(Cursos::class);
+        return $this->morphTo();
     }
 }

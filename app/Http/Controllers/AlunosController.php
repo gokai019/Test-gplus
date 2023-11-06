@@ -40,8 +40,9 @@ class AlunosController extends Controller
 
             return response()->json(['message' => 'Aluno criado com sucesso', 'aluno' => $alunos], 201);
         } catch (\Throwable $th) {
-            return response()->json(['message' => $th->getMessage()], 500);;
-        };
+            return response()->json(['message' => $th->getMessage()], 500);
+            ;
+        }
     }
 
     public function show(alunos $alunos, $id)
